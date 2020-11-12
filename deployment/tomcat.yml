@@ -13,5 +13,5 @@
   - name: stop tomcat 
     shell: "ps -ef |grep tomcat |grep -v grep |awk '{print $2}' |xargs kill -9"
   - name: start tomcat 
-    shell: chdir=/home/chfu/apache-tomcat-9.0.36/bin sh ./startup.sh
+    shell: chdir=/home/chfu/apache-tomcat-9.0.36/bin BUILD_ID=dontKillMe sh ./startup.sh
 
