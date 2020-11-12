@@ -2,21 +2,12 @@
 - hosts: webhosts
   become: True
   tasks:
-  - name: Install java-webserver
-    apt:
-      name: tomcat8
-      state: present
-  - name: Start tomcat8
-    service:
-      name: tomcat8
-      state: started
-      enabled: True
   - name: Remove default ROOT app
     file: 
-      path: /var/lib/tomcat8/webapps/ROOT/
+      path: /home/chfu/apache-tomcat-9.0.36/webapps/ROOT/
       state: absent
   - name: Deploy the WAR file
     copy: 
       src: ../app/target/ROOT.war
-      dest: /var/lib/tomcat8/webapps/
+      dest: /home/chfu/apache-tomcat-9.0.36/webapps/
 
