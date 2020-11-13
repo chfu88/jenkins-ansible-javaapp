@@ -10,6 +10,8 @@
     copy: 
       src: ../app/target/ROOT.war
       dest: /home/chfu/apache-tomcat-9.0.36/webapps/
+  - name: restart tomcat
+    shell: tomcat-script.sh restart
   #- name: stop tomcat 
   #  shell: "ps -ef |grep tomcat |grep -v grep |awk '{print $2}' |xargs kill -9"
   #- name: start tomcat 
